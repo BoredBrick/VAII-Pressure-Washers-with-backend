@@ -1,0 +1,89 @@
+.navbar-brand img {
+    margin-right: 2rem;
+}
+
+.navbar-brand {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000
+}
+
+.navbar-brand::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+.navbar-brand:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.navbar-brand::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: orange;
+    z-index: -1;
+    transition: transform .3s ease;
+}
+
+
+.navbar > div {
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.nav-item a {
+    font-size: 1.400rem;
+    text-decoration: none;
+
+}
+
+.nav-link {
+    text-decoration: none;
+    position: relative;
+    color: white;
+}
+
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link:focus {
+    color: white;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .nav-link:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}

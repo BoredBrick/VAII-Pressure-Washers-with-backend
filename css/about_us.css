@@ -1,0 +1,38 @@
+@import "header.css";
+@import "footer.css";
+
+
+.review-photo {
+    border-radius: 50%;
+    filter: grayscale(100%);
+    margin-top: 2rem;
+}
+
+.reviewer {
+    font-size: 2em;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.reviews {
+    margin-bottom: 4rem;
+}
+
+.reviews h2 {
+    margin-bottom: 3rem;
+}
+
+.review-photo {
+    margin-bottom: 3rem;
+}
+
+.about-us h2 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-us {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    width: 50%;
+}
