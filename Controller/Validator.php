@@ -9,6 +9,7 @@ class Validator {
     }
 
     public function isNameValid(string $name) {
+        $name = filter_var($name, FILTER_SANITIZE_STRING);
         return ctype_alpha($name);
     }
 }

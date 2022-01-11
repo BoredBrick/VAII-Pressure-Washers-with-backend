@@ -1,6 +1,7 @@
 <?php
 
 class Email {
+
     public function __construct(
         public ?string $name = null,
         public ?string $subject = null,
@@ -10,13 +11,6 @@ class Email {
     ) {
     }
 
-    public function sendMail() {
-        $headers = "Mail from: " . $this->email;
-        $message = "You have mail from " .$this->name.".\n\n".$this->message;
-        $myMail = "umnxpaaqgkmfbjdtsh@sdvgeft.com";
-        mail($myMail,$this->subject, $message);
-        header("Location: contact.php?mailsend");
-    }
 
     /**
      * @return string|null

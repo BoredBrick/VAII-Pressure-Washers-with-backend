@@ -1,5 +1,5 @@
 <?php
-require "App.php";
+require "Controller/App.php";
 $app = new App();
 
 ?>

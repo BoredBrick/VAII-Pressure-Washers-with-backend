@@ -1,6 +1,8 @@
 <?php
-require "DBStorage.php";
-require "Validator.php";
+
+require($_SERVER['DOCUMENT_ROOT'] . "/vajko/DB/DBStorage.php");
+require ($_SERVER['DOCUMENT_ROOT'] ."/vajko/Controller/Validator.php");
+
 class App {
     private $storage;
     private $validator;
@@ -44,11 +46,9 @@ class App {
 
     public function insertNewsletter(string $email, string $name) {
         return $this->storage->insertNewsletter($email, $name);
-
     }
 
     public function insertEmail(Email $email) {
         return $this->storage->insertEmail($email);
-
     }
 }
