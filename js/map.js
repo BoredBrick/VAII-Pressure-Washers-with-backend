@@ -11,7 +11,3 @@ function initMap() {
         label: "PowerWashers"
     });
 }
-
-function newTab(url) {
-    window.open(url);
-}
