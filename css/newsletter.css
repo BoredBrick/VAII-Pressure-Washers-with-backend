@@ -5,15 +5,14 @@
     text-align: center;
 }
 
-
-.news-input {
-    margin: 1rem;
-}
-
 .news-cont {
     margin: 1rem;
 }
 
 .news-sect {
     margin-top: 3rem;
+}
+
+.form-cont{
+    margin-top: 4rem;
 }

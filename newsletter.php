@@ -22,7 +22,8 @@ $app = new App();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/newsletter.css"/>
-    <script src="js/forms.js""></script>
+    <script src="js/forms.js"
+    "></script>
 
     <title>PowerWashers</title>
 </head>
@@ -36,19 +37,25 @@ $app = new App();
     </section>
     <p>Subscribe to our newsletter and get 10% off your next cleaning!</p>
 
-    <form method="POST" onsubmit="return false" id="news-form">
-        <section class="news-sect">
-            <div class="container news-input name-input" id="name-input">
-                <input type="text" placeholder="Name" id="name" name="name" required>
+    <div class="container mx-auto form-cont">
+        <form method="POST" onsubmit="return false" id="news-form"
+            <div class="row  mb-3">
+                <div class="col-sm-3 har-error mx-auto news-input" id="name-input">
+                    <input type="text" class="form-control name-input" placeholder="Name" id="name"  required>
+                </div>
             </div>
-            <div class="container news-input email-input" id="mail-input">
-                <input type="text" placeholder="Email address" id="mail" name="mail" required>
+            <div class="row  mb-3">
+                <div class="col-sm-3 mx-auto news-input" id="email-input">
+                    <input type="email" class="form-control email-input" placeholder="Email address" id="mail"  required>
+                </div>
             </div>
             <div class="container">
-                <button type="submit" class="btn btn-outline-dark" value="Subscribe" name="subscribe" onclick="newsletterSignUp()">Subscribe</button>
+                <button type="submit" class="btn btn-outline-dark" value="Subscribe"
+                        onclick="newsletterSignUp()">Subscribe
+                </button>
             </div>
-        </section>
-    </form>
+        </form>
+    </div>
 
 </div>
 

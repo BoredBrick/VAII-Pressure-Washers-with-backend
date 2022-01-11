@@ -1,6 +1,6 @@
 function newsletterSignUp() {
-    $(".name-input").removeClass("has-error");
-    $(".email-input").removeClass("has-error");
+    $(".name-input").removeClass("is-invalid");
+    $(".email-input").removeClass("is-invalid");
     $(".help-block").remove();
     var formData = {
         name: $("#name").val(),
@@ -14,23 +14,23 @@ function newsletterSignUp() {
         data = JSON.parse(data);
         if (!data.success) {
             if (data.errors.name) {
-                $(".name-input").addClass("has-error");
-                $(".name-input").append(
-                    '<div class="help-block">' + data.errors.name + "</div>"
+                $("#name").addClass("is-invalid");
+                $("#name-input").append(
+                    '<div class="help-block text-danger">' + data.errors.name + "</div>"
                 );
             }
 
             if (data.errors.mail) {
-                $(".email-input").addClass("has-error");
-                $(".email-input").append(
-                    '<div class="help-block">' + data.errors.mail + "</div>"
+                $("#mail").addClass("is-invalid");
+                $("#email-input").append(
+                    '<div class="help-block text-danger">' + data.errors.mail + "</div>"
                 );
             }
 
         } else {
-            $("form").html(
-                '<div class="alert alert-success">' + data.message + "</div>"
-            );
+            alert("You have successfully signed up for newsletter");
+            document.getElementById("news-form").reset();
+
         }
     });
 }

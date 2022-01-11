@@ -41,7 +41,7 @@ $app = new App();
         ></script>
         <div class="col-md-12 col-lg-6 contact-form">
             <h2>Contact us</h2>
-            <form class="contact-form" onsubmit="return false" name="contact-form" method="POST">
+            <form class="contact-form" onsubmit="sendEmail()" name="contact-form" method="POST">
                 <div class="name-input">
                     <input type="text" name="name" id="name" placeholder="&#xF007;  Name" required/>
                 </div>
@@ -65,7 +65,7 @@ $app = new App();
                      ></textarea>
                 </div>
                 <br/>
-                <button type="submit" class="btn btn-dark" name="send-mail" onclick="sendEmail()">SEND MAIL</button>
+                <button type="submit" class="btn btn-dark" name="send-mail" >SEND MAIL</button>
             </form>
         </div>
     </div>
