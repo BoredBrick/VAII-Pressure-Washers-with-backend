@@ -39,23 +39,34 @@ $app = new App();
                 defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC48-Hcs0h5FaXDkrw76EUufFJnMI_om-Y&callback=initMap"
         ></script>
+
         <div class="col-md-12 col-lg-6 contact-form">
             <h2>Contact us</h2>
-            <form class="contact-form" onsubmit="sendEmail()" name="contact-form" method="POST">
-                <div class="name-input">
-                    <input type="text" name="name" id="name" placeholder="&#xF007;  Name" required/>
-                </div>
-                <div class="subject-input">
-                    <input type="text"  name="subject" id="subject" placeholder="&#xF0e0;  Subject"
-                           required/>
-                </div>
-                <div class="email-input">
-                    <input type="email"  name="mail" id="mail" placeholder="&#xF0e0; Email"
-                           required/>
-                </div>
-                <div class="message-input">
+            <div class="container  form-cont">
+                <form class="contact-form mx-auto" onsubmit="sendEmail()" name="contact-form" method="POST">
+                    <div class="row mb-3 ml-5">
+                        <div class="col-sm-12 har-error" id="name-input">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="&#xF007;  Name"
+                                   required/>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-12 har-error " id="subject-input">
+                            <input type="text" class="form-control" name="subject" id="subject"
+                                   placeholder="&#xF0e0;  Subject"
+                                   required/>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-12 har-error " id="email-input">
+                            <input type="email" class="form-control" name="mail" id="mail" placeholder="&#xF0e0; Email"
+                                   required/>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-12 har-error" id="message-input">
                      <textarea
-
+                             class="form-control"
                              cols="30"
                              rows="10"
                              placeholder="Enter your message"
@@ -63,10 +74,12 @@ $app = new App();
                              id="message"
                              required
                      ></textarea>
-                </div>
-                <br/>
-                <button type="submit" class="btn btn-dark" name="send-mail" >SEND MAIL</button>
-            </form>
+                        </div>
+                    </div>
+                    <br/>
+                    <button type="submit" class="btn btn-dark" name="send-mail">SEND MAIL</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

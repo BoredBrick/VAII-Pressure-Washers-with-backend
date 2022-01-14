@@ -40,6 +40,10 @@ class App {
         return $this->validator->isNameValid($name);
     }
 
+    public function equalPasswords(string $pass1, string $pass2){
+        return $this->validator->equalPasswords($pass1, $pass2);
+    }
+
     public function removeNewsLetter(string $email) {
         return $this->storage->removeNewsletter($email);
     }
@@ -50,5 +54,9 @@ class App {
 
     public function insertEmail(Email $email) {
         return $this->storage->insertEmail($email);
+    }
+
+    public function insertUser(User $user) {
+        return $this->storage->insertUser($user);
     }
 }

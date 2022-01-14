@@ -2,6 +2,8 @@
 require ($_SERVER['DOCUMENT_ROOT']."/vajko/DB/emailDB.php");
 require ($_SERVER['DOCUMENT_ROOT']."/vajko/DB/newsletterDB.php");
 require ($_SERVER['DOCUMENT_ROOT']."/vajko/DB/visitorsDB.php");
+require ($_SERVER['DOCUMENT_ROOT']."/vajko/DB/userDB.php");
+
 class DBStorage {
 
     private PDO $con;
@@ -32,6 +34,10 @@ class DBStorage {
 
     public function updateVisitors() {
       visitorsDB::updateVisitors($this->con);
+    }
+
+    public function insertUser(User $user) {
+       return userDB::insertUser( $user, $this->con);
     }
 
 }

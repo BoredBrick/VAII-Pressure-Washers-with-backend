@@ -40,7 +40,7 @@ $app = new App();
     <div class="container mx-auto form-cont">
         <form method="POST" onsubmit="return false" id="news-form"
             <div class="row  mb-3">
-                <div class="col-sm-3 har-error mx-auto news-input" id="name-input">
+                <div class="col-sm-3 mx-auto news-input" id="name-input">
                     <input type="text" class="form-control name-input" placeholder="Name" id="name"  required>
                 </div>
             </div>
@@ -50,8 +50,8 @@ $app = new App();
                 </div>
             </div>
             <div class="container">
-                <button type="submit" class="btn btn-outline-dark" value="Subscribe"
-                        onclick="newsletterSignUp()">Subscribe
+                <button type="submit" onclick="newsletterSignUp()" class="btn btn-outline-dark" value="Subscribe"
+                        >Subscribe
                 </button>
             </div>
         </form>
