@@ -80,3 +80,32 @@ function login() {
         }
     });
 }
+
+function unsubscribe() {
+    $(".input").removeClass("is-invalid");
+    $(".help-block").remove();
+    var formData = {
+        mail: $("#unsub-mail").val(),
+    };
+    $.ajax({
+        type: "POST",
+        url: "Controller/Unsubscribe.php",
+        data: formData
+    }).done(function (data) {
+        data = JSON.parse(data);
+        if (!data.success) {
+            if (data.errors.mail) {
+                $("#mail").addClass("is-invalid");
+                $("#input-mail").append(
+                    '<div class="help-block text-danger">' + data.errors.mail + "</div>"
+                );
+            }
+
+        } else {
+            alert("You have successfully unsubscribed from newsletter");
+            document.getElementById("unsub-form").reset();
+            $("#unsub").modal("hide");
+
+        }
+    });
+}

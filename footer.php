@@ -1,3 +1,4 @@
+<script type="text/javascript" src="js/forms.js"></script>
 
 <footer class="p-5 bg-white text-dark" id="footer">
     <div class="container">
@@ -21,8 +22,8 @@
                     <a class="terms" href="#">Terms of service</a>
                 </p>
                 <p><a class="terms" href="#">Data processing agreement</a></p>
-                <p><a class="unsubscribe" data-bs-toggle="modal" data-bs-target="#unsub" href="#unsub">Unsubscribe from newsletter</a></p>
-
+                <p><a class="unsubscribe" data-bs-toggle="modal" data-bs-target="#unsub" href="#unsub">Unsubscribe from
+                        newsletter</a></p>
                 <div class="modal fade" id="unsub" role="dialog">
                     <div class="modal-dialog">
                         <!-- Modal content-->
@@ -31,45 +32,19 @@
                                 <h4 class="modal-title">Unsubscribe from newsletter</h4>
                             </div>
                             <div class="modal-body">
-                                <p>We are sorry to see you go! Please input your email address below to no longer receive our newsletter</p>
-
-                                <?php
-                                $mailErr = "";
-                                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                    if(isset($_POST["unsub"])) {
-                                        if (isset($_POST["mail"])) {
-                                            if($app->isEmailValid($_POST["mail"])) {
-                                                if(!$app->removeNewsLetter($_POST["mail"])) {?>
-                                                    <div class="alert alert-warning" role="alert">
-                                                        Mail not found.
-                                                    </div>
-                                                <?php } else { ?>
-                                                    <script>
-                                                        alert("Your email has been removed.");
-                                                    </script>
-                                                <?php }
-                                            } else { ?>
-                                                <div class="alert alert-warning" role="alert">
-                                                    Invalid Email.
-                                                </div>
-                                            <?php }
-                                        } else { ?>
-                                            <div class="alert alert-warning" role="alert">
-                                                Email field must not be empty.
-                                            </div>
-                                        <?php }
-                                    }
-                                }
-                                ?>
-
-                                <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                                    <div class="container" style="background-color:white">
-                                        <input type="text" placeholder="Email address" name="mail" required>
+                                <p>We are sorry to see you go! Please input your email address below to no longer
+                                    receive our newsletter</p>
+                                <form method="post" onsubmit="return false" id="unsub-form">
+                                    <div class="row mb-3 " id="input-mail" style="background-color:white">
+                                        <input type="text"  class="form-control input" placeholder="Email address" id="unsub-mail" required>
                                     </div>
-                                    <div class="container">
-                                        <button type="submit" class="btn btn-outline-dark unsub" value="Unubscribe" name="unsub">Unsubscribe</button>
+                                    <div class="row mb-3">
+                                        <button type="submit" onclick="unsubscribe()" class="btn btn-outline-dark unsub" value="Unubscribe"
+                                                name="unsub">Unsubscribe
+                                        </button>
                                     </div>
                                 </form>
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
@@ -84,8 +59,8 @@
                 <a href='javascript:newTab("http://www.youtube.com")'><i class="fa fa-youtube"></i></a>
                 <a href='javascript:newTab("http://www.instagram.com")'><i class="fa fa-instagram"></i></a>
                 <div>
-                    <p> Number of visitors: <?=$app->getVisitors();?></p>
-                    <?=$app->updateVisitors();?>
+                    <p> Number of visitors: <?= $app->getVisitors(); ?></p>
+                    <?= $app->updateVisitors(); ?>
                 </div>
             </div>
         </div>

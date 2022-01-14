@@ -28,14 +28,6 @@ if (empty($errors)) {
         $errors['password'] = "Password is not correct";
     }
 
-
-//    if (empty($errors)) {
-//        $hashed_pass = password_hash($_POST["password"], PASSWORD_DEFAULT);
-//        $user = new User(null, $_POST["name"], $hashed_pass, $_POST["mail"]);
-//        if (!$app->insertUser($user)) {
-//            $errors['name'] = "Username already exists.";
-//        };
-//    }
 }
 
 if (!empty($errors)) {

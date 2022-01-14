@@ -35,6 +35,8 @@ function newsletterSignUp() {
     });
 }
 
+
+
 function sendEmail() {
     $(".name-input").removeClass("has-error");
     $("#subject").removeClass("has-error");
