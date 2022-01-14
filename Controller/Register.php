@@ -24,12 +24,19 @@ if (empty($errors)) {
     if (!$app->isNameValid($_POST["name"])) {
         $errors['name'] = "Invalid name";
     }
-    if (!$app->equalPasswords($_POST["password"],$_POST["passwordConfirm"])) {
+
+
+    if (!$app->equalPasswords($_POST["password"], $_POST["passwordConfirm"])) {
         $errors['password'] = "Passwords do not match";
     }
 
+    if (!$app->passLength($_POST["password"]) && empty($errors['password'])) {
+        $errors['password'] = "Password must have at least 5 characters";
+    }
+
     if (empty($errors)) {
-        $user = new User(null,$_POST["name"],password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["mail"]);
+        $hashed_pass = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $user = new User(null, $_POST["name"], $hashed_pass, $_POST["mail"]);
         if (!$app->insertUser($user)) {
             $errors['name'] = "Username already exists.";
         };

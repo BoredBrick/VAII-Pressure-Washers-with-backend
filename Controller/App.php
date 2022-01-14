@@ -43,6 +43,9 @@ class App {
     public function equalPasswords(string $pass1, string $pass2){
         return $this->validator->equalPasswords($pass1, $pass2);
     }
+    public function passLength(string $pass) {
+        return $this->validator->passLength($pass);
+    }
 
     public function removeNewsLetter(string $email) {
         return $this->storage->removeNewsletter($email);
