@@ -40,4 +40,12 @@ class DBStorage {
        return userDB::insertUser( $user, $this->con);
     }
 
+    public function checkForUser(string $name) {
+        return userDB::checkForUser($name, $this->con);
+    }
+
+    public function verifyPassword(string $name,string $pass) {
+        return userDB::verifyPassword($name, $pass, $this->con);
+    }
+
 }

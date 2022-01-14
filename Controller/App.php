@@ -1,7 +1,7 @@
 <?php
 
 require($_SERVER['DOCUMENT_ROOT'] . "/vajko/DB/DBStorage.php");
-require ($_SERVER['DOCUMENT_ROOT'] ."/vajko/Controller/Validator.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/vajko/Controller/Validator.php");
 
 class App {
     private $storage;
@@ -40,9 +40,10 @@ class App {
         return $this->validator->isNameValid($name);
     }
 
-    public function equalPasswords(string $pass1, string $pass2){
+    public function equalPasswords(string $pass1, string $pass2) {
         return $this->validator->equalPasswords($pass1, $pass2);
     }
+
     public function passLength(string $pass) {
         return $this->validator->passLength($pass);
     }
@@ -62,4 +63,13 @@ class App {
     public function insertUser(User $user) {
         return $this->storage->insertUser($user);
     }
+
+    public function checkForUser(string $name) {
+        return $this->storage->checkForUser($name);
+    }
+
+    public function verifyPassword(string $name,string $pass) {
+        return $this->storage->verifyPassword($name, $pass);
+    }
+
 }

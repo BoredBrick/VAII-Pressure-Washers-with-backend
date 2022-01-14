@@ -45,5 +45,38 @@ function register() {
 }
 
 function login() {
+    $(".input").removeClass("is-invalid");
+    $(".help-block").remove();
+    var formData = {
+        name: $("#usernameLogin").val(),
+        password: $("#passwordLogin").val(),
+    };
+    $.ajax({
+        type: "POST",
+        url: "Controller/Login.php",
+        data: formData
+    }).done(function (data) {
+        data = JSON.parse(data);
+        if (!data.success) {
+            if (data.errors.name) {
+                $("#usernameLogin").addClass("is-invalid");
+                $("#login-name-input").append(
+                    '<div class="help-block text-danger">' + data.errors.name + "</div>"
+                );
+            }
 
+            if(data.errors.password) {
+                $("#passwordLogin").addClass("is-invalid");
+                $("#login-pass-input").append(
+                    '<div class="help-block text-danger">' + data.errors.password + "</div>"
+                );
+            }
+
+        } else {
+            alert("You have successfully logged in");
+            document.getElementById("log-form").reset();
+            $("#modalFormLogin").modal("hide");
+
+        }
+    });
 }
