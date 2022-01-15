@@ -28,7 +28,7 @@ $app = new App();
     <title>PowerWashers</title>
 </head>
 <body>
-<?php include("header.html") ?>
+<?php include("header.php") ?>
 <div class="container-fluid text-center">
     <div class="row">
         <div class="col-md-12 col-lg-6 map-column">

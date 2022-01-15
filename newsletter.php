@@ -28,7 +28,7 @@ $app = new App();
     <title>PowerWashers</title>
 </head>
 <body>
-<?php include("header.html") ?>
+<?php include("header.php") ?>
 <div class="container about-newsletter">
     <section class="news-cont">
         <h1 class="news-text">Ready to get</h1>

@@ -37,7 +37,23 @@
                     <a href="contact.php" class="nav-link">Contact us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalFormLogin">Login</a>
+<!--                    <a href="" class="nav-link">--><?php //echo $_SESSION['username'] ?><!--</a>-->
+
+                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?php echo $_SESSION['username'] ?>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="Controller/Logout.php">Log out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
                 </li>
             </ul>
         </div>

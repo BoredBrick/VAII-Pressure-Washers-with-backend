@@ -76,6 +76,7 @@ function login() {
             alert("You have successfully logged in");
             document.getElementById("log-form").reset();
             $("#modalFormLogin").modal("hide");
+            window.location = "index.php";
 
         }
     });

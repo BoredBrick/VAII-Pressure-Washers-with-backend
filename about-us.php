@@ -28,7 +28,7 @@ $app = new App();
     <title>PowerWashers</title>
 </head>
 <body>
-<?php include("header.html") ?>
+<?php include("header.php") ?>
 
     <div class="container about-us">
       <h2>About us</h2>

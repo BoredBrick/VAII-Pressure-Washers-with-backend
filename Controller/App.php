@@ -72,4 +72,8 @@ class App {
         return $this->storage->verifyPassword($name, $pass);
     }
 
+    public function loggedIn() {
+        return isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true;
+    }
+
 }
