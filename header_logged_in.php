@@ -4,12 +4,12 @@
     <div class="container-fluid ">
         <a href="index.php" class="navbar-brand" id="logo-text"
         ><img
-                src="img/washingGun.png"
-                alt="Washing gun"
-                width="90"
-                height="84"
+                    src="img/washingGun.png"
+                    alt="Washing gun"
+                    width="90"
+                    height="84"
 
-        />Power Washers</a
+            />Power Washers</a
         >
         <button
                 class="navbar-toggler"
@@ -37,17 +37,17 @@
                     <a href="contact.php" class="nav-link">Contact us</a>
                 </li>
                 <li class="nav-item">
-<!--                    <a href="" class="nav-link">--><?php //echo $_SESSION['username'] ?><!--</a>-->
 
                     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id=""
+                                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <?php echo $_SESSION['username'] ?>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" a>
                                     <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="edit_profile.php">Edit profile</a></li>
                                     <li><a class="dropdown-item" href="Controller/Logout.php">Log out</a></li>
                                 </ul>
                             </li>

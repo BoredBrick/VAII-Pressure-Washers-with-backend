@@ -31,5 +31,38 @@ class userDB {
         return password_verify($pass, $hashed);
     }
 
+    public static function getMail(string $name, PDO $con) {
+        $stmt = $con->prepare("SELECT email FROM users WHERE username=:name");
+        $stmt->bindParam(":name", $name);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+
+    public static function getID(string $name, PDO $con) {
+        $stmt = $con->prepare("SELECT id FROM users WHERE username=:name");
+        $stmt->bindParam(":name", $name);
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
+
+    public static function updateName(string $name, int $id, PDO $con) {
+        $stmt = $con->prepare("UPDATE users set username=:name WHERE id=:id");
+        $stmt->bindParam(":name", $name);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+    public static function updatePassword(string $pass, int $id, PDO $con) {
+        $stmt = $con->prepare("UPDATE users set password=:pass WHERE id=:id");
+        $stmt->bindParam(":pass", $pass);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
+    public static function updateMail(string $mail, int $id, PDO $con) {
+        $stmt = $con->prepare("UPDATE users set email=:mail WHERE id=:id");
+        $stmt->bindParam(":mail", $mail);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
 
 }

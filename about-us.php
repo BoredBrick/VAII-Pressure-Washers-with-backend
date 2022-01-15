@@ -1,5 +1,6 @@
 <?php
 require "Controller/App.php";
+session_start();
 $app = new App();
 
 ?>
@@ -28,7 +29,13 @@ $app = new App();
     <title>PowerWashers</title>
 </head>
 <body>
-<?php include("header.php") ?>
+<?php
+if ($app->loggedIn()) {
+    include("header_logged_in.php") ;
+} else {
+    include("header.php") ;
+}
+?>
 
     <div class="container about-us">
       <h2>About us</h2>

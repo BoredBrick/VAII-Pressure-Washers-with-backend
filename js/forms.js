@@ -36,7 +36,6 @@ function newsletterSignUp() {
 }
 
 
-
 function sendEmail() {
     $(".name-input").removeClass("has-error");
     $("#subject").removeClass("has-error");
@@ -91,4 +90,52 @@ function sendEmail() {
             );
         }
     });
+}
+
+function editUser() {
+    $(".input").removeClass("is-invalid");
+    $(".help-block").remove();
+    var formData = {
+        name: $("#input-name").val(),
+        mail: $("#input-mail").val(),
+        password: $("#input-pass").val(),
+        passwordConfirm: $("#input-pass-check").val(),
+        id: $("#id").val()
+    };
+    $.ajax({
+        type: "POST",
+        url: "Controller/UpdateProfile.php",
+        data: formData
+    }).done(function (data) {
+        data = JSON.parse(data);
+        if (!data.success) {
+            if (data.errors.name) {
+                $("#input-name").addClass("is-invalid");
+                $(".name-div").append(
+                    '<div class="help-block text-danger">' + data.errors.name + "</div>"
+                );
+            }
+
+            if (data.errors.mail) {
+                $("#input-mail").addClass("is-invalid");
+                $(".mail-div").append(
+                    '<div class="help-block text-danger">' + data.errors.mail + "</div>"
+                );
+            }
+
+            if (data.errors.password) {
+                $("#input-pass").addClass("is-invalid");
+                $("#input-pass-check").addClass("is-invalid");
+                $(".pass-div").append(
+                    '<div class="help-block text-danger">' + data.errors.password + "</div>"
+                );
+            }
+
+        } else {
+            alert("Data successfully changed");
+            window.location = "edit_profile.php";
+
+        }
+    });
+
 }

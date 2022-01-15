@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require "Controller/App.php";
 $app = new App();
 
@@ -28,7 +30,13 @@ $app = new App();
     <title>PowerWashers</title>
 </head>
 <body>
-<?php include("header.php") ?>
+<?php
+if ($app->loggedIn()) {
+    include("header_logged_in.php") ;
+} else {
+    include("header.php") ;
+}
+?>
 <div class="container about-newsletter">
     <section class="news-cont">
         <h1 class="news-text">Ready to get</h1>

@@ -12,16 +12,6 @@ class App {
         $this->storage = new DBStorage();
         $this->validator = new Validator();
 
-        if (isset($_REQUEST["contact-form"])) {
-            $mail = new Email();
-            $mail->name = $_POST["name"];
-            $mail->subject = $_POST["subject"];
-            $mail->email = $_POST["email"];
-            $mail->message = $_POST["message"];
-            $this->storage->insertEmail($mail);
-            header("Location: contact.php?mailsend");
-        }
-
     }
 
     public function getVisitors() {
@@ -68,12 +58,35 @@ class App {
         return $this->storage->checkForUser($name);
     }
 
-    public function verifyPassword(string $name,string $pass) {
+    public function verifyPassword(string $name, string $pass) {
         return $this->storage->verifyPassword($name, $pass);
     }
 
     public function loggedIn() {
         return isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true;
+    }
+
+    public function getMail(string $name) {
+        return $this->storage->getMail($name);
+    }
+
+    public function getID(string $name) {
+        return $this->storage->getID($name);
+    }
+
+    public function updateName(string $name, int $id) {
+        return $this->storage->updateName($name, $id);
+    }
+
+    public function updateMail(string $mail, int $id) {
+        return $this->storage->updateMail($mail, $id);
+
+
+    }
+
+    public function updatePassword(string $pass, int $id) {
+        return $this->storage->updatePassword($pass, $id);
+
     }
 
 }
