@@ -69,4 +69,8 @@ class DBStorage {
         return userDB::updatePassword($pass, $id, $this->con);
     }
 
+    public function deleteUser(int $id) {
+        return userDB::deleteUser($id, $this->con);
+    }
+
 }

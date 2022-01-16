@@ -110,3 +110,31 @@ function unsubscribe() {
         }
     });
 }
+
+function deleteUser() {
+    $(".input").removeClass("is-invalid");
+    $(".help-block").remove();
+    var formData = {
+        password: $("#del-pass").val(),
+        id: $("#id").val()
+    };
+    $.ajax({
+        type: "POST",
+        url: "Controller/DeleteProfile.php",
+        data: formData
+    }).done(function (data) {
+        data = JSON.parse(data);
+        if (!data.success) {
+            if (data.errors.password) {
+                $("#del-pass").addClass("is-invalid");
+                $("#del-pass-input").append(
+                    '<div class="help-block text-danger">' + data.errors.password + "</div>"
+                );
+            }
+        } else {
+            alert("account deleted");
+            window.location = "index.php";
+
+        }
+    });
+}

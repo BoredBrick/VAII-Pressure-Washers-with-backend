@@ -65,4 +65,10 @@ class userDB {
         return $stmt->execute();
     }
 
+    public static function deleteUser(int $id, PDO $con) {
+        $stmt = $con->prepare("DELETE from users WHERE id=:id");
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
+
 }

@@ -80,13 +80,14 @@ class App {
 
     public function updateMail(string $mail, int $id) {
         return $this->storage->updateMail($mail, $id);
-
-
     }
 
     public function updatePassword(string $pass, int $id) {
         return $this->storage->updatePassword($pass, $id);
+    }
 
+    public function deleteUser(int $id) {
+        return $this->storage->deleteUser($id);
     }
 
 }

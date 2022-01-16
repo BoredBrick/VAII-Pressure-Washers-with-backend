@@ -28,6 +28,7 @@ $id = $app->getID($name);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/edit_profile.css"/>
     <script type="text/javascript" src="js/forms.js"></script>
+    <script type="text/javascript" src="js/modals.js"></script>
 
     <title>PowerWashers</title>
 </head>
@@ -71,11 +72,38 @@ if ($app->loggedIn()) {
                             </div>
                         </div>
                         <button class="btn btn-primary" onclick="editUser()" type="button">Save changes</button>
+                        <button class="btn btn-danger pull-right" data-bs-toggle="modal" data-bs-target="#modalFormDel" type="button">Delete profile
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="modalFormDel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalDel">Delete your profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="reg-form" onsubmit="return false" method="POST">
+                    <p>To delete your profile, input your password down below. This action is irreversible.</p>
+                    <div class="mb-3" id="del-pass-input">
+                        <input type="password" class="form-control input" id="del-pass" name="del-pass"
+                               placeholder="Password" required/>
+                    </div>
+                    <div class="">
+                        <button type="submit" onclick="deleteUser()" class="btn btn-danger float-end">Delete profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <?php include("footer.php") ?>
 </body>
