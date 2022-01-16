@@ -45,20 +45,20 @@ if ($app->loggedIn()) {
 ?>
 <h2 class="your-mails">Your emails</h2>
 <div class="container mt-5">
-    <div class="accordion accordion-flush" id="accordion">
+    <div class="accordion accordion-flush " id="accordion">
         <?php
-        $emails = $app->getEmails();
+        $emails = array_reverse($app->getEmails());
         foreach ($emails as $email) {
             echo '
         <div class="container col-6 mb-1  border-bottom">
-            <div class="accordion-item">
+            <div class="accordion-item ">
                  <h2 class="accordion-header " id="heading_' . $email['id'] . '">
-                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_' . $email['id'] . '">
+                 <button class="accordion-button  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_' . $email['id'] . '">
                         <div class="container  row">
                             <div class="container mx-auto col">
                                 ' . $email['subject'] . '
                             </div>
-                            <div class="container  col float-end">
+                            <div class="container  col">
                                 ' . $email['date_sent'] . '
                             </div>
                         </div>
