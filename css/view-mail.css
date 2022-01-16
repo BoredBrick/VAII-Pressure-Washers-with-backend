@@ -1,0 +1,7 @@
+@import "header.css";
+@import "footer.css";
+
+.your-mails {
+    text-align: center;
+    margin-top: 1rem;
+}

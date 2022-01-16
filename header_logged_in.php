@@ -46,7 +46,7 @@
                                     <?php echo $_SESSION['username'] ?>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" a>
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="view_mail.php">View emails</a></li>
                                     <li><a class="dropdown-item" href="edit_profile.php">Edit profile</a></li>
                                     <li><a class="dropdown-item" href="Controller/Logout.php">Log out</a></li>
                                 </ul>
@@ -59,71 +59,4 @@
         </div>
     </div>
 </nav>
-
-<!--login modal-->
-<div class="modal fade" id="modalFormLogin">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="titleLogin">Login</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="log-form" onsubmit="return false" method="POST">
-                    <div class="mb-3" id="login-name-input">
-                        <input type="text" class="form-control input" id="usernameLogin" name="username"
-                               placeholder="Username" required/>
-                    </div>
-                    <div class="mb-3" id="login-pass-input">
-                        <input type="password" class="form-control input" id="passwordLogin" name="password"
-                               placeholder="Password" required/>
-                    </div>
-                    <div class="modal-footer d-block">
-                        <p class="float-start">Not registered? <a href="" data-bs-toggle="modal"
-                                                                  data-bs-target="#modalFormReg">Sign Up</a></p>
-                        <button type="submit" onclick="login()" class="btn btn-dark float-end">Login</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--reg modal-->
-<div class="modal fade" id="modalFormReg">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalReg">Register</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="reg-form" onsubmit="return false" method="POST">
-                    <div class="mb-3" id="name-input">
-                        <input type="text" class="form-control input" id="username" name="username"
-                               placeholder="Username" required/>
-                    </div>
-                    <div class="mb-3" id="mail-input">
-                        <input type="email" class="form-control input" id="email" name="email" placeholder="Email"
-                               required/>
-                    </div>
-                    <div class="mb-3" id="pass=input">
-                        <input type="password" class="form-control input password" id="password" name="password"
-                               placeholder="Password" required/>
-                    </div>
-                    <div class="mb-3" id="pass-check-input">
-                        <input type="password" class="form-control input password" id="passwordConfirm"
-                               name="passwordConfirm" placeholder="Confirm password" required/>
-                    </div>
-                    <div class="modal-footer d-block">
-                        <p class="float-start">Already registered? <a id="openReq" href="#" data-bs-toggle="modal"
-                                                                      data-bs-target="#modalFormLogin">Log in</a></p>
-                        <button type="submit" onclick="register()" class="btn btn-dark float-end">Register</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>

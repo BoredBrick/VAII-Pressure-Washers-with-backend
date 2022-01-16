@@ -73,4 +73,8 @@ class DBStorage {
         return userDB::deleteUser($id, $this->con);
     }
 
+    public function getEmails() {
+        return emailDB::getEmails($this->con);
+    }
+
 }

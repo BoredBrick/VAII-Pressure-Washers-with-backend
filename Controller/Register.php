@@ -1,5 +1,6 @@
 <?php
 require "App.php";
+session_start();
 $app = new App();
 
 $errors = [];
@@ -48,7 +49,8 @@ if (!empty($errors)) {
     $data['errors'] = $errors;
 } else {
     $data['success'] = true;
-    $data['message'] = 'Success!';
+    $_SESSION['loggedin'] = true;
+    $_SESSION['username'] = $_POST["name"];
 }
 
 echo json_encode($data);

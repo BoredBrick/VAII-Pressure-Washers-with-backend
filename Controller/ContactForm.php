@@ -43,7 +43,6 @@ if (!empty($errors)) {
     $data['errors'] = $errors;
 } else {
     $data['success'] = true;
-    $data['message'] = 'Success!';
 }
 
 echo json_encode($data);
