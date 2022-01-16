@@ -71,29 +71,29 @@ function sendEmail() {
         data = JSON.parse(data);
         if (!data.success) {
             if (data.errors.name) {
-                $(".name-input").addClass("has-error");
+                $("#name").addClass("is-invalid");
                 $(".name-input").append(
                     '<div class="help-block">' + data.errors.name + "</div>"
                 );
             }
 
             if (data.errors.subject) {
-                $(".subject-input").addClass("has-error");
+                $("#subject").addClass("is-invalid");
                 $(".subject-input").append(
                     '<div class="help-block">' + data.errors.subject + "</div>"
                 );
             }
 
             if (data.errors.mail) {
-                $(".mail-input").addClass("has-error");
-                $(".mail-input").append(
+                $("#mail").addClass("is-invalid");
+                $("#mail-input").append(
                     '<div class="help-block">' + data.errors.mail + "</div>"
                 );
             }
 
             if (data.errors.message) {
-                $(".message-input").addClass("has-error");
-                $(".message-input").append(
+                $("#message").addClass("is-invalid");
+                $("#message-input").append(
                     '<div class="help-block">' + data.errors.message + "</div>"
                 );
             }

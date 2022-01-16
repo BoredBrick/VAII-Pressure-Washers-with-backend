@@ -25,7 +25,7 @@ if (empty($_POST['message'])) {
 
 if (empty($errors)) {
     if (!$app->isEmailValid($_POST["mail"])) {
-        $errors['email'] = "Email not valid";
+        $errors['mail'] = "Email not valid";
     }
     if (!$app->isNameValid($_POST["name"])) {
         $errors['name'] = "Invalid name";

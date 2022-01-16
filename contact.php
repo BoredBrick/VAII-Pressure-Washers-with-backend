@@ -26,7 +26,8 @@ $app = new App();
     <link rel="stylesheet" href="css/contact_us.css"/>
     <script type="text/javascript" src="js/forms.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
-    <script src="plugins/toast/jquery.toast.min.js""></script>
+    <script src="plugins/toast/jquery.toast.min.js"
+    "></script>
     <link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
 
     <title>PowerWashers</title>
@@ -34,14 +35,14 @@ $app = new App();
 <body>
 <?php
 if ($app->loggedIn()) {
-    include("header_logged_in.php") ;
+    include("header_logged_in.php");
 } else {
-    include("header.php") ;
+    include("header.php");
 }
 ?>
-<div class="container-fluid text-center">
-    <div class="row">
-        <div class="col-md-12 col-lg-6 map-column">
+<div class="container  text-center">
+    <div class="row ">
+        <div class="col-xs-12 col-xl-6 map-column">
             <div id="map"></div>
         </div>
         <script
@@ -50,46 +51,50 @@ if ($app->loggedIn()) {
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC48-Hcs0h5FaXDkrw76EUufFJnMI_om-Y&callback=initMap"
         ></script>
 
-        <div class="col-md-12 col-lg-6 contact-form">
+        <div class="col-xs-12 col-xl-6 contact-form">
             <h2>Contact us</h2>
-            <div class="container  form-cont">
-                <form class="contact-form mx-auto" id="form-cont" onsubmit="return false" name="contact-form" method="POST">
-                    <div class="row mb-3 ml-5">
-                        <div class="col-sm-12 har-error" id="name-input">
+                <form class="contact-form " id="form-cont" onsubmit="return false" name="contact-form" method="POST">
+
+                    <div class="row mb-3">
+                        <div class="col-md-6 mx-auto name-input" id="name-input">
                             <input type="text" class="form-control" name="name" id="name" placeholder="&#xF007;  Name"
                                    required/>
                         </div>
                     </div>
+
                     <div class="row mb-3">
-                        <div class="col-sm-12 har-error " id="subject-input">
+                        <div class="col-md-6  mx-auto" id="subject-input">
                             <input type="text" class="form-control" name="subject" id="subject"
                                    placeholder="&#xF0e0;  Subject"
                                    required/>
                         </div>
                     </div>
+
                     <div class="row mb-3">
-                        <div class="col-sm-12 har-error " id="email-input">
+                        <div class="col-md-6  mx-auto" id="email-input">
                             <input type="email" class="form-control" name="mail" id="mail" placeholder="&#xF0e0; Email"
                                    required/>
                         </div>
                     </div>
+
                     <div class="row mb-3">
-                        <div class="col-sm-12 har-error" id="message-input">
-                     <textarea
-                             class="form-control"
-                             cols="30"
-                             rows="10"
-                             placeholder="Enter your message"
-                             name="message"
-                             id="message"
-                             required
-                     ></textarea>
+                        <div class="col-md-6 mx-auto" id="message-input">
+                             <textarea
+                                     class="form-control"
+                                     cols="30"
+                                     rows="10"
+                                     placeholder="Enter your message"
+                                     name="message"
+                                     id="message"
+                                     required></textarea>
                         </div>
                     </div>
-                    <br/>
-                    <button type="submit" onclick="sendEmail()" class="btn btn-dark" name="send-mail">SEND MAIL</button>
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <button type="submit" onclick="sendEmail()" class="btn btn-dark" name="send-mail">SEND MAIL</button>
+                        </div>
+                    </div>
                 </form>
-            </div>
         </div>
     </div>
 </div>

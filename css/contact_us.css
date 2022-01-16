@@ -7,12 +7,6 @@
     font-family: Arial, FontAwesome;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 50%;
-    margin-bottom: 1rem;
-}
-
 .contact-form a {
     width: 50%;
     text-decoration: none;
@@ -29,5 +23,5 @@ textarea {
 
 .map-column {
     padding-top: 4.5rem;
-    padding-left: 12rem;
+    padding-left: 5rem;
 }
