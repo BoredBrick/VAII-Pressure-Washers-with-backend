@@ -29,6 +29,8 @@ $id = $app->getID($name);
     <link rel="stylesheet" href="css/edit_profile.css"/>
     <script type="text/javascript" src="js/forms.js"></script>
     <script type="text/javascript" src="js/modals.js"></script>
+    <script src="plugins/toast/jquery.toast.min.js""></script>
+    <link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
 
     <title>PowerWashers</title>
 </head>

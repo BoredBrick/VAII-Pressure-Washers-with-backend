@@ -36,10 +36,9 @@ function register() {
             }
 
         } else {
-            alert("You have successfully registered");
             document.getElementById("reg-form").reset();
             $("#modalFormReg").modal("hide");
-
+            window.reload();
         }
     });
 }
@@ -73,11 +72,9 @@ function login() {
             }
 
         } else {
-            alert("You have successfully logged in");
             document.getElementById("log-form").reset();
             $("#modalFormLogin").modal("hide");
             location.reload();
-
         }
     });
 }
@@ -103,9 +100,20 @@ function unsubscribe() {
             }
 
         } else {
-            alert("You have successfully unsubscribed from newsletter");
             document.getElementById("unsub-form").reset();
             $("#unsub").modal("hide");
+            $.toast({
+                text: "You have unsubscribed from newsletter.", // Text that is to be shown in the toast
+                heading: 'Success', // Optional heading to be shown on the toast
+                icon: 'success', // Type of toast icon
+                showHideTransition: 'fade', // fade, slide or plain
+                allowToastClose: true, // Boolean value true or false
+                hideAfter: 4000, // false to make it sticky or number representing the miliseconds as time after which toast needs to be hidden
+                stack: 5, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
+                position: 'bottom-right', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
+                textAlign: 'left',  // Text alignment i.e. left, right or center
+                loader: false,  // Whether to show loader or not. True by default
+            });
 
         }
     });
@@ -132,7 +140,6 @@ function deleteUser() {
                 );
             }
         } else {
-            alert("account deleted");
             window.location = "index.php";
 
         }

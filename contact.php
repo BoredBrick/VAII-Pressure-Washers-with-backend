@@ -26,6 +26,8 @@ $app = new App();
     <link rel="stylesheet" href="css/contact_us.css"/>
     <script type="text/javascript" src="js/forms.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
+    <script src="plugins/toast/jquery.toast.min.js""></script>
+    <link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
 
     <title>PowerWashers</title>
 </head>
@@ -51,7 +53,7 @@ if ($app->loggedIn()) {
         <div class="col-md-12 col-lg-6 contact-form">
             <h2>Contact us</h2>
             <div class="container  form-cont">
-                <form class="contact-form mx-auto" onsubmit="sendEmail()" name="contact-form" method="POST">
+                <form class="contact-form mx-auto" id="form-cont" onsubmit="return false" name="contact-form" method="POST">
                     <div class="row mb-3 ml-5">
                         <div class="col-sm-12 har-error" id="name-input">
                             <input type="text" class="form-control" name="name" id="name" placeholder="&#xF007;  Name"
@@ -85,7 +87,7 @@ if ($app->loggedIn()) {
                         </div>
                     </div>
                     <br/>
-                    <button type="submit" class="btn btn-dark" name="send-mail">SEND MAIL</button>
+                    <button type="submit" onclick="sendEmail()" class="btn btn-dark" name="send-mail">SEND MAIL</button>
                 </form>
             </div>
         </div>

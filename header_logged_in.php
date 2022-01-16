@@ -1,4 +1,6 @@
 <script type="text/javascript" src="js/modals.js"></script>
+<script src="plugins/toast/jquery.toast.min.js""></script>
+<link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
 <body>
 <nav class="navbar sticky-top navbar-expand-lg  bg-dark">
     <div class="container-fluid ">
