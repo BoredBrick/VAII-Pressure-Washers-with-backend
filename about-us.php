@@ -71,19 +71,19 @@ if ($app->loggedIn()) {
     <h2 class="jobs">Some of our jobs</h2>
     </div>
     <div class="row mx-auto">
-        <div class="col col-sm-12 col-lg-4 ">
+        <div class="col-xs-12 col-lg-4 ">
             <div class="comp">
                 <img src="img/before.jpeg"/>
                 <img src="img/after.jpeg"/>
             </div>
         </div>
-        <div class="col col-sm-12 col-lg-4">
+        <div class=" col-xs-12 col-lg-4">
             <div class="comp">
                 <img src="img/before2.jpeg"/>
                 <img src="img/after2.jpeg"/>
             </div>
         </div>
-        <div class="col-4 col-sm-12 col-lg-4">
+        <div class="col-xs-12 col-lg-4">
             <div class="comp">
                 <img src="img/before3.jpeg"/>
                 <img src="img/after3.jpeg"/>

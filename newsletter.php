@@ -24,7 +24,8 @@ $app = new App();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/newsletter.css"/>
-    <script src="plugins/toast/jquery.toast.min.js""></script>
+    <script src="plugins/toast/jquery.toast.min.js"
+    "></script>
     <link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
 
     <script src="js/forms.js"
@@ -40,46 +41,38 @@ if ($app->loggedIn()) {
     include("header.php");
 }
 ?>
-<div class="container about-newsletter">
-    <section class="news-cont">
-        <h1 class="news-text">Ready to get</h1>
-        <h1 class="news-text">serious about your</h1>
-        <h1 class="news-text">surface cleanliness?</h1>
-    </section>
-    <p>Subscribe to our newsletter and get 10% off your next cleaning!</p>
 
-    <div class="container mx-auto form-cont">
-        <form method="POST" onsubmit="return false" id="news-form"
-        <div class="row  mb-3">
-            <div class="col-sm-3 mx-auto news-input" id="name-input">
-                <input type="text" class="form-control name-input" placeholder="Name" id="name" required>
+
+<div class="row mx-auto mt-3">
+    <div class="col col-md-4 mx-auto">
+        <div class="card border-dark bg-light mb-3">
+            <div class="card-header">Newsletter signup</div>
+            <div class="card-body">
+                <h5 class="card-title">Ready to get serious about your surface cleanliness?</h5>
+                <p class="card-text">Subscribe to our newsletter and get 10% off your next cleaning!</p>
+                <form method="POST" onsubmit="return false" id="news-form">
+                    <div class="row  mt-3 mb-1">
+                        <div class="col-md-7  mx-auto news-input" id="name-input">
+                            <input type="text" class="form-control name-input" placeholder="Name" id="name" required>
+                        </div>
+                    </div>
+                    <div class="row  mb-3">
+                        <div class="col-md-7  mx-auto news-input" id="email-input">
+                            <input type="email" class="form-control email-input" placeholder="Email address" id="mail"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-7 mx-auto text-center">
+                            <button type="submit" onclick="newsletterSignUp()" class="btn btn-block btn-outline-dark"
+                                    value="Subscribe">Subscribe
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
             </div>
         </div>
-        <div class="row  mb-3">
-            <div class="col-sm-3 mx-auto news-input" id="email-input">
-                <input type="email" class="form-control email-input" placeholder="Email address" id="mail" required>
-            </div>
-        </div>
-        <div class="container">
-            <button type="submit" onclick="newsletterSignUp()" class="btn btn-outline-dark" value="Subscribe"
-            >Subscribe
-            </button>
-        </div>
-        </form>
-    </div>
-
-</div>
-
-
-<div class="toast" role="alert">
-    <div class="toast-header" id="toast">
-        <img src="..." class="rounded me-2" alt="...">
-        <strong class="me-auto">Bootstrap</strong>
-        <small class="text-muted">11 mins ago</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
-    </div>
-    <div class="toast-body">
-        Hello, world! This is a toast message.
     </div>
 </div>
 

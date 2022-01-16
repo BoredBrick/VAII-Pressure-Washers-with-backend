@@ -1,25 +1,24 @@
-
 <script type="text/javascript" src="js/modals.js"></script>
 
 <body>
-<nav class="navbar sticky-top navbar-expand-lg  bg-dark">
-    <div class="container-fluid ">
+<nav class="navbar navbar-dark sticky-top navbar-default navbar-expand-xl bg-dark">
+    <div class="container-fluid  ">
         <a href="index.php" class="navbar-brand" id="logo-text"
         ><img
-                src="img/washingGun.png"
-                alt="Washing gun"
-                width="90"
-                height="84"
+                    src="img/washingGun.png"
+                    alt="Washing gun"
+                    width="90"
+                    height="84"
 
-        />Power Washers</a
+            />Power Washers</a
         >
         <button
                 class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#navItems"
-        >
+                data-bs-target="#navItems">
             <span class="navbar-toggler-icon"></span>
+
         </button>
         <div class="collapse navbar-collapse" id="navItems">
             <ul class="navbar-nav ms-auto">
@@ -102,7 +101,8 @@
                                name="passwordConfirm" placeholder="Confirm password" required/>
                     </div>
                     <div class="modal-footer d-block">
-                        <p class="float-start">Already registered? <a class="link-dark" id="openReq" href="#" data-bs-toggle="modal"
+                        <p class="float-start">Already registered? <a class="link-dark" id="openReq" href="#"
+                                                                      data-bs-toggle="modal"
                                                                       data-bs-target="#modalFormLogin">Log in</a></p>
                         <button type="submit" onclick="register()" class="btn btn-dark float-end">Register</button>
                     </div>
