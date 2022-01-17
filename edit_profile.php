@@ -5,8 +5,8 @@ session_start();
 if (!$_SESSION["loggedin"]) {
     header("Location:index.php");
 }
-$name = $_SESSION['username'];
-$mail = $app->getMail($name);
+$name = filter_var ($_SESSION['username'], FILTER_SANITIZE_STRING);
+$mail = filter_var ($app->getMail($name), FILTER_SANITIZE_EMAIL);
 $id = $app->getID($name);
 ?>
 <!DOCTYPE html>

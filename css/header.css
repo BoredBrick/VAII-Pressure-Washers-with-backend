@@ -52,12 +52,13 @@
     font-size: 1.400rem;
     text-decoration: none;
 
+
 }
 
 .nav-link {
     text-decoration: none;
     position: relative;
-    color: white;
+    color: white !important;
 }
 
 

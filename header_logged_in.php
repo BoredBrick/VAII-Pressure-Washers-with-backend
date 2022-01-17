@@ -2,7 +2,7 @@
 <script src="plugins/toast/jquery.toast.min.js""></script>
 <link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
 <body>
-<nav class="navbar sticky-top navbar-expand-lg  bg-dark">
+<nav class="navbar navbar-dark sticky-top navbar-expand-lg  bg-dark">
     <div class="container-fluid ">
         <a href="index.php" class="navbar-brand" id="logo-text"
         ><img
@@ -45,7 +45,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id=""
                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <?php echo $_SESSION['username'] ?>
+                                    <?php echo filter_var ($_SESSION['username'], FILTER_SANITIZE_STRING);  ?>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" a>
                                     <li><a class="dropdown-item" href="view_mail.php">View emails</a></li>

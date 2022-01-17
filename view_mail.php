@@ -49,14 +49,19 @@ if ($app->loggedIn()) {
         <?php
         $emails = array_reverse($app->getEmails());
         foreach ($emails as $email) {
+            $id = $email['id'];
+            $message = filter_var ($email['message'], FILTER_SANITIZE_STRING);
+            $subject = filter_var ($email['subject'], FILTER_SANITIZE_STRING);
+            $name = filter_var ($email['name'], FILTER_SANITIZE_EMAIL);
+            $mail = filter_var ($email['email'], FILTER_SANITIZE_STRING);
             echo '
         <div class="container col-6 mb-1  border-bottom">
             <div class="accordion-item ">
-                 <h2 class="accordion-header " id="heading_' . $email['id'] . '">
-                 <button class="accordion-button  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_' . $email['id'] . '">
+                 <h2 class="accordion-header " id="heading_' . $id . '">
+                 <button class="accordion-button  collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_' . $id . '">
                         <div class="container  row">
                             <div class="container mx-auto col">
-                                ' . $email['subject'] . '
+                                ' . $subject . '
                             </div>
                             <div class="container  col">
                                 ' . $email['date_sent'] . '
@@ -64,14 +69,14 @@ if ($app->loggedIn()) {
                         </div>
                 </button>
                 </h2>
-                <div id="collapse_' . $email['id'] . '" class="accordion-collapse collapse"  data-bs-parent="#accordion">
+                <div id="collapse_' . $id . '" class="accordion-collapse collapse"  data-bs-parent="#accordion">
                     <div class="container">
                         <div class="container row">
                             <div class="accordion-body">
-                                You have received an email from <strong> ' . $email['name'] . '. </strong><br> 
-                                Their email address is <strong> ' . $email['email'] . '</strong> <br>
+                                You have received an email from <strong> ' . $name . '. </strong><br> 
+                                Their email address is <strong> ' . $mail . '</strong> <br>
                                 <hr>
-                                ' . $email['message'] . '
+                                ' . $message . '
                             </div>
                         </div>
                     </div>

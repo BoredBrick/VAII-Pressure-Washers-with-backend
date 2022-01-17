@@ -10,7 +10,8 @@ class DBStorage {
 
     public function __construct() {
         try {
-            $this->con = new PDO("mysql:host=localhost;dbname=powerWashers", "root", "dtb456");
+            $this->con = new PDO("mysql:host=localhost;dbname=powerWashers;charset=utf8", "root", "dtb456");
+            $this->con->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("Chyba:* " . $e->getMessage());
