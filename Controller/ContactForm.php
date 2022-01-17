@@ -34,7 +34,7 @@ if (empty($errors)) {
         $email = new Email($_POST["name"], $_POST["subject"], $_POST["mail"], $_POST["message"]);
         if (!$app->insertEmail($email)) {
             $errors['mail'] = "Error sending email";
-        };
+        }
     }
 }
 

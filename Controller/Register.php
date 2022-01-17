@@ -40,7 +40,7 @@ if (empty($errors)) {
         $user = new User(null, $_POST["name"], $hashed_pass, $_POST["mail"]);
         if (!$app->insertUser($user)) {
             $errors['name'] = "Username already exists.";
-        };
+        }
     }
 }
 

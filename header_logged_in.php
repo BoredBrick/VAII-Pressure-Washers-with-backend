@@ -1,8 +1,17 @@
-<script type="text/javascript" src="js/modals.js"></script>
-<script src="plugins/toast/jquery.toast.min.js""></script>
-<link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="js/modals.js"></script>
+    <script src="plugins/toast/jquery.toast.min.js"></script>
+    <link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
+    <title>PowerWashers</title>
+</head>
 <body>
-<nav class="navbar navbar-dark sticky-top navbar-expand-lg  bg-dark">
+<nav class="navbar navbar-dark sticky-top navbar-expand-xl  bg-dark">
     <div class="container-fluid ">
         <a href="index.php" class="navbar-brand" id="logo-text"
         ><img
@@ -43,11 +52,11 @@
                     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id=""
+                                <a class="nav-link dropdown-toggle" href="#"
                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <?php echo filter_var ($_SESSION['username'], FILTER_SANITIZE_STRING);  ?>
+                                    <?php echo filter_var($_SESSION['username'], FILTER_SANITIZE_STRING); ?>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
                                     <li><a class="dropdown-item" href="view_mail.php">View emails</a></li>
                                     <li><a class="dropdown-item" href="edit_profile.php">Edit profile</a></li>
                                     <li><a class="dropdown-item" href="Controller/Logout.php">Log out</a></li>

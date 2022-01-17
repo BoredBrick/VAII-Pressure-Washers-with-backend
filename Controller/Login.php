@@ -21,11 +21,11 @@ if (empty($errors)) {
         $errors['name'] = "Invalid name";
     }
 
-    if(!$app->checkForUser($_POST["name"]) && empty($errors["name"])) {
+    if (!$app->checkForUser($_POST["name"]) && empty($errors["name"])) {
         $errors['name'] = "User not found";
 
     }
-    if(!$app->verifyPassword($_POST["name"], $_POST["password"]) && empty($errors["name"])) {
+    if (!$app->verifyPassword($_POST["name"], $_POST["password"]) && empty($errors["name"])) {
         $errors['password'] = "Password is not correct";
     }
 

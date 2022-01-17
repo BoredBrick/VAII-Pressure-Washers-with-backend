@@ -1,5 +1,13 @@
-<script type="text/javascript" src="js/modals.js"></script>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="js/modals.js"></script>
+    <title>PowerWashers</title>
+</head>
 <body>
 <nav class="navbar navbar-dark sticky-top navbar-default navbar-expand-xl bg-dark">
     <div class="container-fluid  ">

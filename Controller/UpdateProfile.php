@@ -11,7 +11,7 @@ if (empty($_POST['name'])) {
     $errors['name'] = 'Name is required.';
 }
 
-if (!empty($_POST['name']) && $app->checkForUser($_POST['name']) && ($_POST['name'] != $_SESSION['username']) ) {
+if (!empty($_POST['name']) && $app->checkForUser($_POST['name']) && ($_POST['name'] != $_SESSION['username'])) {
     $errors['name'] = 'Name already taken.';
 }
 
@@ -34,7 +34,7 @@ if (empty($errors)) {
         $errors['name'] = "Invalid name";
     }
 
-    if(!empty($_POST['password']) && !empty($_POST['passwordConfirm'])) {
+    if (!empty($_POST['password']) && !empty($_POST['passwordConfirm'])) {
 
         if (!$app->equalPasswords($_POST["password"], $_POST["passwordConfirm"])) {
             $errors['password'] = "Passwords do not match";
@@ -50,7 +50,7 @@ if (empty($errors)) {
         $app->updateName($_POST["name"], $_POST["id"]);
         $app->updateMail($_POST["mail"], $_POST["id"]);
         $_SESSION['username'] = $_POST["name"];
-        if(!empty($_POST['password'])) {
+        if (!empty($_POST['password'])) {
             $hashed_pass = password_hash($_POST["password"], PASSWORD_DEFAULT);
             $app->updatePassword($hashed_pass, $_POST["id"]);
         }

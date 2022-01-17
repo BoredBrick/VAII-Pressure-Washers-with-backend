@@ -26,7 +26,7 @@ if (empty($errors)) {
     if (empty($errors)) {
         if (!$app->insertNewsletter($_POST["mail"], $_POST["name"])) {
             $errors['mail'] = "Email already registered";
-        };
+        }
     }
 }
 

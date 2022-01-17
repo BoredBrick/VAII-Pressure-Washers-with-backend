@@ -27,9 +27,9 @@ $id = $app->getID($name);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/edit_profile.css"/>
-    <script type="text/javascript" src="js/forms.js"></script>
-    <script type="text/javascript" src="js/modals.js"></script>
-    <script src="plugins/toast/jquery.toast.min.js""></script>
+    <script src="js/forms.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="plugins/toast/jquery.toast.min.js"></script>
     <link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
 
     <title>PowerWashers</title>

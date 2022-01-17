@@ -7,7 +7,7 @@ $errors = [];
 $data = [];
 
 
-if(!$app->verifyPassword($_SESSION["username"], $_POST["password"])) {
+if (!$app->verifyPassword($_SESSION["username"], $_POST["password"])) {
     $errors['password'] = "Password is not correct";
 }
 if (empty($errors)) {

@@ -24,13 +24,13 @@ $app = new App();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/about_us.css"/>
-    <script type="text/javascript" src="js/map.js"></script>
-    <script src="plugins/toast/jquery.toast.min.js"
-    "></script>
     <link rel="stylesheet" href="plugins/toast/jquery.toast.min.css"/>
-    <script src="plugins/pic-diff/jquery.event.move.js" type="text/javascript"></script>
-    <script src="plugins/pic-diff/jquery.twentytwenty.js" type="text/javascript"></script>
     <link rel="stylesheet" href="plugins/pic-diff/twentytwenty.css" type="text/css" media="screen"/>
+
+    <script src="js/map.js"></script>
+    <script src="plugins/toast/jquery.toast.min.js"></script>
+    <script src="plugins/pic-diff/jquery.event.move.js"></script>
+    <script src="plugins/pic-diff/jquery.twentytwenty.js"></script>
     <title>PowerWashers</title>
 </head>
 <body>
@@ -68,25 +68,25 @@ if ($app->loggedIn()) {
 
 <div class="container-fluid pic-comp bg-dark text-white">
     <div class="container mx-auto jobs-cont">
-    <h2 class="jobs">Some of our jobs</h2>
+        <h2 class="jobs">Some of our jobs</h2>
     </div>
     <div class="row mx-auto">
         <div class="col-xs-12 col-lg-4 ">
             <div class="comp">
-                <img src="img/before.jpeg"/>
-                <img src="img/after.jpeg"/>
+                <img src="img/before.jpeg" alt="House before cleaning"/>
+                <img src="img/after.jpeg" alt="House after cleaning"/>
             </div>
         </div>
         <div class=" col-xs-12 col-lg-4">
             <div class="comp">
-                <img src="img/before2.jpeg"/>
-                <img src="img/after2.jpeg"/>
+                <img src="img/before2.jpeg" alt="House before cleaning"/>
+                <img src="img/after2.jpeg" alt="House after cleaning"/>
             </div>
         </div>
         <div class="col-xs-12 col-lg-4">
             <div class="comp">
-                <img src="img/before3.jpeg"/>
-                <img src="img/after3.jpeg"/>
+                <img src="img/before3.jpeg" alt="Apartments before cleaning"/>
+                <img src="img/after3.jpeg" alt="Apartments after cleaning"/>
             </div>
         </div>
     </div>

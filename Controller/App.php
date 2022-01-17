@@ -90,7 +90,7 @@ class App {
         return $this->storage->deleteUser($id);
     }
 
-    public function getEmails(){
+    public function getEmails() {
         return $this->storage->getEmails();
     }
 

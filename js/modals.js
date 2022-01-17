@@ -80,7 +80,7 @@ function login() {
 }
 
 function unsubscribe() {
-    $(".input").removeClass("is-invalid");
+    $("#unsub-mail").removeClass("is-invalid");
     $(".help-block").remove();
     var formData = {
         mail: $("#unsub-mail").val(),
@@ -93,7 +93,7 @@ function unsubscribe() {
         data = JSON.parse(data);
         if (!data.success) {
             if (data.errors.mail) {
-                $("#mail").addClass("is-invalid");
+                $("#unsub-mail").addClass("is-invalid");
                 $("#input-mail").append(
                     '<div class="help-block text-danger">' + data.errors.mail + "</div>"
                 );

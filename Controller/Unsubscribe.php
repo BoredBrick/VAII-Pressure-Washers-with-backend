@@ -17,7 +17,7 @@ if (empty($errors)) {
     }
 
     if (empty($errors)) {
-        if(!$app->removeNewsLetter($_POST["mail"])) {
+        if (!$app->removeNewsLetter($_POST["mail"])) {
             $errors['mail'] = "Email not subscribed";
         }
     }
