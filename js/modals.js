@@ -38,7 +38,7 @@ function register() {
         } else {
             document.getElementById("reg-form").reset();
             $("#modalFormReg").modal("hide");
-            window.reload();
+            window.location.reload();
         }
     });
 }

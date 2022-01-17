@@ -42,12 +42,14 @@ if ($app->loggedIn()) {
 } else {
     include("header.php");
 }
+$emails = array_reverse($app->getEmails());
+$numOfMails = count($emails);
 ?>
 <h2 class="your-mails">Your emails</h2>
+<h4 class="your-mails">You have <?php echo $numOfMails ?> emails</h4>
 <div class="container mt-5">
     <div class="accordion accordion-flush " id="accordion">
         <?php
-        $emails = array_reverse($app->getEmails());
         foreach ($emails as $email) {
             $id = $email['id'];
             $message = filter_var ($email['message'], FILTER_SANITIZE_STRING);
